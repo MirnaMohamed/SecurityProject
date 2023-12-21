@@ -1,5 +1,5 @@
 ﻿using SecurityProject.algorithms;
-using SecurityProject.algorithms.AffineAlgorithm;
+using SecurityProject.algorithms.Interfaces;
 using SecurityProject.Exceptions;
 using System.Text;
 
@@ -29,7 +29,7 @@ namespace SecurityProject
                     throw new OptionNotFoundException("Please select 1 or 2 only");
             }
         }
-        private static int[] MessageToCode(string message)
+        public static int[] MessageToCode(string message)
         {
             int[] codeList = new int[message.Length];
             for (int i = 0; i < message.Length; i++)
@@ -298,6 +298,9 @@ namespace SecurityProject
                     break;
                 case "vigenere":
                 case "3": //vigenere
+                    Console.Write("Enter key: ");
+                    string key = Console.ReadLine();
+                    encrypt = new VigenereCipher(key);
                     break;
                 case "caeser":
                 case "4": //caeser
@@ -337,6 +340,9 @@ namespace SecurityProject
                     break;
                 case "vigenere":
                 case "3": //vigenere
+                    Console.Write("Enter key: ");
+                    string key = Console.ReadLine();
+                    decrypt = new VigenereCipher(key);
                     break;
                 case "caeser":
                 case "4": //caeser

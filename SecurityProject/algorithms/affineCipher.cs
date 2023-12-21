@@ -1,4 +1,6 @@
-﻿namespace SecurityProject.algorithms.AffineAlgorithm
+﻿using SecurityProject.algorithms.Interfaces;
+
+namespace SecurityProject.algorithms
 {
     public class AffineCipher : ICipher
     {
