@@ -1,4 +1,5 @@
 ﻿using SecurityProject.algorithms;
+using SecurityProject.algorithms.AffineAlgorithm;
 using SecurityProject.Exceptions;
 using System.Text;
 
