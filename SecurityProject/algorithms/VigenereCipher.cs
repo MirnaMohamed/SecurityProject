@@ -49,7 +49,7 @@ namespace SecurityProject.algorithms
                 else
                 {
                     // converting in range 0-94
-                    EncryptedCode = (textCode[i] + FinalKey[i]) % 94;
+                    EncryptedCode = (textCode[i] + FinalKey[i]) % 95;
                 }
 
                 EncryptedList[i] = EncryptedCode;
@@ -75,7 +75,7 @@ namespace SecurityProject.algorithms
                 else
                 {
                     // converting in range 0-94 in case negative numbers
-                    DecryptedCode = (textCode[i] - FinalKey[i] + 94) % 94;
+                    DecryptedCode = (textCode[i] - FinalKey[i] + 95) % 95;
                 }
 
                 DecryptedList[i] = DecryptedCode;

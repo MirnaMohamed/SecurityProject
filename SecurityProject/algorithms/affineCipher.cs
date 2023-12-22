@@ -14,19 +14,19 @@ namespace SecurityProject.algorithms
         public string Encrypt(int[] codeList)
         {
             bool check = false;
-            if (a > 94)
+            if (a > 95)
             {
-                check = GCD(a, 94);
+                check = GCD(a, 95);
             }
             else
-                check = GCD(94, a);
+                check = GCD(95, a);
             if (check == true)
             {
                 int[] encryptedCode = new int[codeList.Length];
                 int i = 0;
                 foreach (int ch in codeList)
                 {
-                    int encryptedChar = ((a * ch) + b) % 94;
+                    int encryptedChar = ((a * ch) + b) % 95;
                     encryptedCode[i++] = encryptedChar;
                 }
                 string encryptedText = Program.CodeToMessage(encryptedCode);
@@ -38,7 +38,7 @@ namespace SecurityProject.algorithms
 
         public string Decrypt(int[] ciphertext)
         {
-            int aInverse = ModInverse(a, 94);
+            int aInverse = ModInverse(a, 95);
             int[] decryptedCodeList = new int[ciphertext.Length];
             int i = 0;
             foreach (int ch in ciphertext)
@@ -46,9 +46,9 @@ namespace SecurityProject.algorithms
                 int decryptedCode;
                 int x = ch - b; //to check that it's not negative before calculating the mode
                 if (x >= 0)
-                    decryptedCode = aInverse * x % 94;
+                    decryptedCode = aInverse * x % 95;
                 else
-                    decryptedCode = aInverse * (x + 94) % 94;
+                    decryptedCode = aInverse * (x + 95) % 95;
 
                 decryptedCodeList[i++] = decryptedCode;
             }
