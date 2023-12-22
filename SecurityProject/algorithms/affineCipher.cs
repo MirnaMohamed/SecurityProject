@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SecurityProject;
+﻿using SecurityProject.algorithms.Interfaces;
 
 namespace SecurityProject.algorithms
 {
@@ -50,10 +45,10 @@ namespace SecurityProject.algorithms
             {
                 int decryptedCode;
                 int x = ch - b; //to check that it's not negative before calculating the mode
-                if(x >= 0)
+                if (x >= 0)
                     decryptedCode = aInverse * x % 94;
                 else
-                    decryptedCode = aInverse * (x+94) %94;
+                    decryptedCode = aInverse * (x + 94) % 94;
 
                 decryptedCodeList[i++] = decryptedCode;
             }
@@ -86,4 +81,4 @@ namespace SecurityProject.algorithms
         }
     }
 }
-    
+
