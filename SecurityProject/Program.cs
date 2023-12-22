@@ -295,6 +295,9 @@ namespace SecurityProject
                     break;
                 case "autokey":
                 case "2": //autokey
+                    Console.Write("Enter key: ");
+                    string Akey = Console.ReadLine();
+                    encrypt = new AutoKey(Akey);
                     break;
                 case "vigenere":
                 case "3": //vigenere
@@ -337,6 +340,9 @@ namespace SecurityProject
                     break;
                 case "autokey":
                 case "2": //autokey
+                    Console.Write("Enter key: ");
+                    string Akey = Console.ReadLine();
+                    decrypt = new AutoKey(Akey);
                     break;
                 case "vigenere":
                 case "3": //vigenere
