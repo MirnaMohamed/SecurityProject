@@ -31,11 +31,8 @@ namespace SecurityProject.algorithms
                 int i = 0;
                 foreach (int ch in codeList)
                 {
-                    int encryptedChar;
-                    encryptedChar = ((a * ch) + b) % 94;
-                    //(char)(((a * (ch - 'A') + b) % 26) + 'A');
+                    int encryptedChar = ((a * ch) + b) % 94;
                     encryptedCode[i++] = encryptedChar;
-                    //    encryptedText += encryptedChar;
                 }
                 string encryptedText = Program.CodeToMessage(encryptedCode);
                 return encryptedText;
