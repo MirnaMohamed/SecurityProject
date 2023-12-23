@@ -307,6 +307,9 @@ namespace SecurityProject
                     break;
                 case "caeser":
                 case "4": //caeser
+                    Console.Write("Enter key: ");
+                    string Ckey = Console.ReadLine();
+                    encrypt = new CaeserCipher(Ckey);
                     break;
                 default:
                     throw new OptionNotFoundException("Please select one of the following options:\n" +
@@ -352,6 +355,9 @@ namespace SecurityProject
                     break;
                 case "caeser":
                 case "4": //caeser
+                    Console.Write("Enter key: ");
+                    string Ckey = Console.ReadLine();
+                    decrypt = new CaeserCipher(Ckey);
                     break;
                 default:
                     throw new OptionNotFoundException("Please select one of the following options:\n" +
